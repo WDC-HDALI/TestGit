@@ -1,6 +1,6 @@
 report 50105 "BDMR Customer Invoice"
 {
-    RDLCLayout = './StandardSalesInvoice.rdl';
+    RDLCLayout = './StandardSalesInvoice.rdlc';
     WordLayout = './StandardSalesInvoice.docx';
     CaptionML = ENU = 'BDMR Customer Invoice', FRA = 'BDMR Facture client';
     Description = 'WDC01';
@@ -1259,7 +1259,7 @@ report 50105 "BDMR Customer Invoice"
                 MonthTxt := Format(DATE2DMY("Posting Date", 2));
                 IF StrLen(MonthTxt) <> 2 then
                     MonthTxt := '0' + MonthTxt;
-                BDMRInvoiceNo := Format("Invoice type") + CopyStr(Format(DATE2DMY("Posting Date", 3)), 3, 2) + MonthTxt + ' ' + "No.";
+                //BDMRInvoiceNo := Format("Invoice type") + CopyStr(Format(DATE2DMY("Posting Date", 3)), 3, 2) + MonthTxt + ' ' + "No.";
 
                 IF NOT CustSell.Get("Sell-to Customer No.") then
                     CustSell.Reset();
